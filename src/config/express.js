@@ -1,7 +1,12 @@
+const userRouter = require('#Routes/user.routes.js');
 const express = require('express');
 
 const expressApp = express();
 
-//TODO  Add middleware an Routes;
+//Middlewares 
+expressApp.use(express.json());
+
+//Routes
+expressApp.use('/user', userRouter)
 
 module.export = expressApp;
