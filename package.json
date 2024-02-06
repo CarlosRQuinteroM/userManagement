@@ -16,6 +16,10 @@
     },
     "license": "MIT",
     "dependencies": {
+        "@sinclair/typebox": "^0.32.13",
+        "ajv": "^8.12.0",
+        "ajv-errors": "^3.0.0",
+        "ajv-formats": "^2.1.1",
         "dotenv": "^16.4.1",
         "express": "^4.18.2",
         "mongoose": "^8.1.1"

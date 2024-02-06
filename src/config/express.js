@@ -9,4 +9,5 @@ expressApp.use(express.json());
 //Routes
 expressApp.use('/user', userRouter)
 
-module.export = expressApp;
+
+module.exports = expressApp;
