@@ -1,0 +1,26 @@
+{
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "module": "Node20",
+        "baseUrl": "./",
+        "paths": {
+            "#Config/*": [
+                "./src/config/*"
+            ],
+            "#Controllers/*": [
+                "./src/controllers/*"
+            ],
+            "#Dto/*": [
+                "./src/dto/*"
+            ],
+            "#Routes/*": [
+                "./src/routes/*"
+            ],
+            "#Schemas/*": [
+                "./src/schemas/*"
+            ]
+        }
+    }
+}
