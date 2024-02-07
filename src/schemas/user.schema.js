@@ -7,7 +7,7 @@ const userSchema = new Schema({
     name: {
         type: String, required: true, minLength: 2, maxLength: 20
     },
-    surName: {
+    surname: {
         type: String, required: true, minLength: 4, maxLength: 50
     },
     email: {

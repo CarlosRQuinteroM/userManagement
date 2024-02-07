@@ -1,17 +1,11 @@
-const { emailDTOSchema, idDTOSchema, nameDTOSchema, passwordDTOSchema, surnameDTOSchema } = require('#Lib/dto-types.js')
+const { passwordDTOSchema } = require('#Lib/dto-types.js')
 const { Type } = require('@sinclair/typebox');
 const Ajv = require('ajv').default;
 const addFormats = require('ajv-formats');
 const addErrors = require('ajv-errors');
 
 
-const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/;
-
-const RegisterDTOSchema = Type.Object({
-    _id: idDTOSchema,
-    name: nameDTOSchema,
-    surname: surnameDTOSchema,
-    email: emailDTOSchema,
+const UserDeleteDTOSchema = Type.Object({
     password: passwordDTOSchema,
 }, {
     additionalProperties: false,
@@ -29,12 +23,11 @@ ajv.addFormat('password', {
     errors: true,
 });
 
-addFormats(ajv, ['email', 'uuid']);
 addErrors(ajv);
 
-const validateSchema = ajv.compile(RegisterDTOSchema);
+const validateSchema = ajv.compile(UserDeleteDTOSchema);
 
-const userRegisterDTO = (req, res, next) => {
+const userDeleteDTO = (req, res, next) => {
     const isDTOValid = validateSchema(req.body);
 
     if (!isDTOValid)
@@ -47,4 +40,4 @@ const userRegisterDTO = (req, res, next) => {
 
 
 
-module.exports = userRegisterDTO;
+module.exports = userDeleteDTO;
