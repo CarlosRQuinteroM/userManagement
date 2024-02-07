@@ -25,7 +25,7 @@ const userRegisterController = async (req, res) => {
 
     await user.save()
 
-    return res.send('Successfully registered user')
+    return res.status(201).send('Successfully registered user')
 }
 
 module.exports = userRegisterController;  
