@@ -1,5 +1,5 @@
-
 //CONTROLLERS
+const userDeleteController = require('#Controllers/user-delete.controller.js');
 const userUpdatePasswordController = require('#Controllers/user-update-password.controller.js');
 const userUpdateEmailController = require('#Controllers/user-update-email.controller.js')
 const userUpdateDataController = require('#Controllers/user-update-data.controller.js');
@@ -25,6 +25,6 @@ userRouter.get('/profile', userJWTDTO, userProfileController);
 userRouter.patch('/update-data', userJWTDTO, userUpdateDataDTO, userUpdateDataController);
 userRouter.patch('/update-email', userJWTDTO, UserUpdateEmailDTO, userUpdateEmailController);
 userRouter.patch('/update-password', userJWTDTO, userUpdatePasswordDTO, userUpdatePasswordController);
-// userRouter.delete('/delete', userJWTDTO, userDeleteDTO, userDeleteController);
+ userRouter.delete('/delete', userJWTDTO, userDeleteDTO, userDeleteController);
 
 module.exports = userRouter;
