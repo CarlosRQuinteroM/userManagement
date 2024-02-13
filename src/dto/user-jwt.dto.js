@@ -5,7 +5,7 @@ const userJWTDTO = async (req, res, next) => {
 
 
     if (!authorization)
-        return res.status(401).send({ errors: ['Usuario no autorizado'] });
+        return res.status(401).send({ errors: ['Unauthorized user'] });
     const token = authorization.split(' ')[1];
 
     try {
@@ -19,7 +19,7 @@ const userJWTDTO = async (req, res, next) => {
 
         next();
     } catch (error) {
-        return res.status(401).send({ errors: ['Usuario no autorizado'] });
+        return res.status(401).send({ errors: ['Unauthorized user'] });
     }
 };
 

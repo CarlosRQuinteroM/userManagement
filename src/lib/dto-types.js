@@ -27,8 +27,8 @@ const surnameDTOSchema = Type.String({
 const emailDTOSchema = Type.String({
     format: "email",
     errorMessage: {
-        type: 'invalid email type',
-        format: 'invalid email format (RFC 5322)'
+        type: 'Invalid email type',
+        format: 'Invalid email format (RFC 5322)'
     }
 });
 const passwordDTOSchema = Type.String({
@@ -36,8 +36,8 @@ const passwordDTOSchema = Type.String({
     minLength: 10,
     maxLength: 25,
     errorMessage: {
-        type: 'invalid password type',
-        format: 'invalid password format,must have at least one uppercase letter, one lowercase letter, and one number',
+        type: 'Invalid password type',
+        format: 'Invalid password format,must have at least one uppercase letter, one lowercase letter, and one number',
         minLength: 'Password must be at least 10 characters',
         maxLength: 'Password must have a maximum of 25 characters'
     }

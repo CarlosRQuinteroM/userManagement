@@ -10,7 +10,7 @@ const userUpdatePasswordController = async (req, res) => {
 
 
     const checkPassword = await compare(oldPassword, existingUserById.password);
-    if (!checkPassword) return res.status(401).send({ errors: ['Credenciales incorrectas'] });
+    if (!checkPassword) return res.status(401).send({ errors: ['Incorrect credentials'] });
 
 
     const hashedPassword = await hash(newPassword, 10);
@@ -18,7 +18,7 @@ const userUpdatePasswordController = async (req, res) => {
     existingUserById.password = hashedPassword;
 
     await existingUserById.save();
-    return res.send('Updated email user');
+    return res.send('Updated Password user');
 
 };
 

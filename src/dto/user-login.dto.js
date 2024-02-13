@@ -13,7 +13,7 @@ const LoginDTOSchema = Type.Object({
 }, {
     additionalProperties: false,
     errorMessage: {
-        additionalProperties: "no Valid format."
+        additionalProperties: "No valid format."
     }
 })
 

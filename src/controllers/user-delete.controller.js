@@ -10,7 +10,7 @@ const userDeleteController = async (req, res) => {
     if (!existingUserById) return res.status(401).send({ errors: ['Unauthorized user'] });
 
     const checkPassword = await compare(password, existingUserById.password);
-    if (!checkPassword) return res.status(401).send({ errors: ['Credenciales incorrectas'] });
+    if (!checkPassword) return res.status(401).send({ errors: ['Incorrect credentials'] });
 
     await existingUserById.delete();
 
