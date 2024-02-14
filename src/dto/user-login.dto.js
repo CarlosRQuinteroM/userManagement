@@ -1,4 +1,4 @@
-const { emailDTOSchema, passwordDTOSchema } = require('#Lib/dto-types.js')
+const { emailDTOSchema, passwordDTOSchema } = require('#Dto/dto-types.js')
 const { Type } = require('@sinclair/typebox');
 const Ajv = require('ajv').default;
 const addFormats = require('ajv-formats');
