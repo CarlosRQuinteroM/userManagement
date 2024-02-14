@@ -18,7 +18,12 @@ const userSchema = new Schema({
     },
     isValid: {
         type: Boolean,
+    },
+    validationString:
+    {
+        type: String,
     }
+
 })
 
 const UserModel = model("User", userSchema);

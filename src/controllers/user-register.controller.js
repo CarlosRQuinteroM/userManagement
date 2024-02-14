@@ -1,3 +1,5 @@
+const randonString = require("#Lib/randString.js");
+const sendValidationEmail = require("#Lib/nodeMailer.js");
 const UserModel = require("#Schemas/user.schema.js");
 const { hash } = require("bcrypt");
 
@@ -16,6 +18,7 @@ const userRegisterController = async (req, res) => {
     const hashedPassword = await hash(password, 10);
 
     const isValid = false;
+    const validationString = randonString()
 
     const user = new UserModel({
         _id,
@@ -24,10 +27,11 @@ const userRegisterController = async (req, res) => {
         email,
         password: hashedPassword,
         isValid,
+        validationString,
     })
 
     await user.save()
-
+    sendValidationEmail(email, validationString);
     return res.status(201).send('Successfully registered user')
 }
 

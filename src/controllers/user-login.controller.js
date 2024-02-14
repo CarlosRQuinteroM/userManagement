@@ -13,6 +13,9 @@ const userLoginController = async (req, res) => {
 
     if (!checkPassword) return res.status(401).send({ errors: ['Incorrect credentials'] });
 
+    // Check if the user Email is Validate.
+    if (!existingUserByEmail.isValid) return res.send({ errors: ['User it`s no validate'] });
+
     const jwtConstructor = new SignJWT({ _id: existingUserByEmail._id });
     const encoder = new TextEncoder()
     const jwt = await jwtConstructor

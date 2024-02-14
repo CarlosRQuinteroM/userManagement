@@ -6,6 +6,7 @@ const userUpdateDataController = require('#Controllers/user-update-data.controll
 const userProfileController = require('#Controllers/user-profile.controller.js');
 const userLoginController = require('#Controllers/user-login.controller.js');
 const userRegisterController = require('#Controllers/user-register.controller.js');
+const userVerifyController = require('#Controllers/user-verify.controller.js');
 //DTOs
 const userJWTDTO = require('#Dto/user-jwt.dto.js');
 const userDeleteDTO = require('#Dto/user-delete.dto.js');
@@ -25,6 +26,8 @@ userRouter.get('/profile', userJWTDTO, userProfileController);
 userRouter.patch('/update-data', userJWTDTO, userUpdateDataDTO, userUpdateDataController);
 userRouter.patch('/update-email', userJWTDTO, UserUpdateEmailDTO, userUpdateEmailController);
 userRouter.patch('/update-password', userJWTDTO, userUpdatePasswordDTO, userUpdatePasswordController);
- userRouter.delete('/delete', userJWTDTO, userDeleteDTO, userDeleteController);
+userRouter.delete('/delete', userJWTDTO, userDeleteDTO, userDeleteController);
+
+userRouter.get('/verify/:validationString', userVerifyController);
 
 module.exports = userRouter;
