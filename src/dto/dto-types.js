@@ -42,5 +42,11 @@ const passwordDTOSchema = Type.String({
         maxLength: 'Password must have a maximum of 25 characters'
     }
 });
+const isValidDTOSchema = Type.Boolean({
+    errorMessage: {
+        type: 'Invalid type'
+    }
+});
 
-module.exports = { idDTOSchema, nameDTOSchema, surnameDTOSchema, emailDTOSchema, passwordDTOSchema }
+
+module.exports = { idDTOSchema, nameDTOSchema, surnameDTOSchema, emailDTOSchema, passwordDTOSchema, isValidDTOSchema }

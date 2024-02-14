@@ -15,12 +15,15 @@ const userRegisterController = async (req, res) => {
 
     const hashedPassword = await hash(password, 10);
 
+    const isValid = false;
+
     const user = new UserModel({
         _id,
         name,
         surname,
         email,
         password: hashedPassword,
+        isValid,
     })
 
     await user.save()
